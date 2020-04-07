@@ -4,12 +4,12 @@ use std::error;
 const MIN_ATTRIBUTE_SCORE: u32 = 0;
 const MAX_ATTRIBUTE_SCORE: u32 = 100;
 
-pub enum Attribute {
-    Strength(AttributeScore),
-    Dexterity(AttributeScore),
-    Charisma(AttributeScore),
-    Intelligence(AttributeScore),
-    Willpower(AttributeScore),
+pub struct Attributes {
+    strength: AttributeScore,
+	dexterity: AttributeScore,
+	charisma: AttributeScore,
+	intelligence: AttributeScore,
+	willpower: AttributeScore,
 }
 
 struct AttributeScore(u32);
@@ -17,7 +17,7 @@ struct AttributeScore(u32);
 #[derive(Debug, PartialEq)]
 struct AttributeScoreError {
     min: u32,
-    max: u32
+    max: u32,
 }
 
 impl AttributeScore {
